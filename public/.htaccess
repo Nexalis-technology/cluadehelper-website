@@ -1,0 +1,29 @@
+# cluadehelper — static export hosting rules (Apache / LiteSpeed)
+
+# Don't expose directory listings (e.g. Next's internal prefetch payload files).
+Options -Indexes
+
+# Use the site's own 404 page.
+ErrorDocument 404 /404.html
+
+# next/og renders this route to a plain file with no extension — force the
+# correct content type so social/link previews read it as an image.
+<Files "opengraph-image">
+  ForceType image/png
+</Files>
+
+# Compress text-based assets.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript application/json image/svg+xml
+</IfModule>
+
+# Caching: hashed Next.js build assets can be cached forever, HTML should
+# always be revalidated so deploys show up immediately.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
