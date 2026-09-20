@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { faqs } from "@/lib/faq";
 
@@ -28,9 +29,9 @@ export function FaqSection() {
           </h2>
           <p className="mt-4 text-muted">
             Can&apos;t find what you&apos;re looking for? Visit the{" "}
-            <a href="/support" className="text-accent underline underline-offset-4">
+            <Link href="/support" className="text-accent underline underline-offset-4">
               support page
-            </a>
+            </Link>
             .
           </p>
         </div>
