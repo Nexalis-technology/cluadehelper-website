@@ -12,7 +12,7 @@ const features = [
     icon: Gauge,
     title: "Usage tracker",
     description:
-      "See your session and weekly usage as a percentage, with reset countdowns, right above the chat box — always know how much room you have left.",
+      "A live Claude usage meter for your session and weekly usage as a percentage, with reset countdowns, right above the chat box — always know how much room you have left.",
   },
   {
     icon: Type,

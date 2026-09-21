@@ -5,6 +5,11 @@ export const faqs = [
       "Yes. cluadehelper is a free Chrome extension with no account, subscription, or paywall.",
   },
   {
+    question: "Is cluadehelper a Claude usage meter?",
+    answer:
+      "Yes. cluadehelper's usage tracker works as a live Claude usage meter, showing your session and weekly percentage used, with reset countdowns, right above the claude.ai message box.",
+  },
+  {
     question: "Which sites does cluadehelper work on?",
     answer:
       "cluadehelper is built specifically for claude.ai's web chat interface. It adds its usage tracker, token counter, and toolbar directly into the Claude chat page.",
